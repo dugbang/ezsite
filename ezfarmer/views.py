@@ -16,22 +16,22 @@ from ezfarmer.models import Plant, Capture, Report, Controller
 from ezfarmer.serializers import PlantSerializer, CaptureSerializer, ReportSerializer, ControllerSerializer
 # from ezsite.views import LoginRequiredMixin
 
-ezp10_logger = logging.getLogger(__name__)
+ezfarmer_logger = logging.getLogger(__name__)
 
 
 class PlantLV(ListView):
     model = Plant
-    # template_name = 'ezp10/plant_list.html'
+    # template_name = 'ezfarmer/plant_list.html'
 
 
 class CaptureLV(ListView):
     model = Capture
-    # template_name = 'ezp10/capture_list.html'
+    # template_name = 'ezfarmer/capture_list.html'
 
 
 class CaptureDV(DetailView):
     model = Capture
-    # template_name = 'ezp10/capture_detail.html'
+    # template_name = 'ezfarmer/capture_detail.html'
 
 
 class CaptureCreateView(CreateView):
@@ -41,9 +41,9 @@ class CaptureCreateView(CreateView):
     """
     model = Capture
     fields = ('plant', 'controller', 'image', 'create_at')
-    success_url = reverse_lazy('ezp10:capture_upload')
+    success_url = reverse_lazy('ezfarmer:capture_upload')
 
-    # template_name = 'ezp10/capture_form.html'
+    # template_name = 'ezfarmer/capture_form.html'
 
     # @csrf_exempt
     def form_valid(self, form):
@@ -119,7 +119,7 @@ def get_post_plants(request):
         # }
         # data = json.loads(request.body.decode("utf-8"))
         data = json.loads(request.body)
-        ezp10_logger.debug(data)
+        ezfarmer_logger.debug(data)
         serializer = PlantSerializer(data=data)
         if serializer.is_valid():
             serializer.save()

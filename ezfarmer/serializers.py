@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 from ezfarmer.models import Plant, Capture, Report, Controller
 
-ezp10_logger = logging.getLogger(__name__)
+ezfarmer_logger = logging.getLogger(__name__)
 
 
 class PlantSerializer(serializers.ModelSerializer):

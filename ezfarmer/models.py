@@ -21,7 +21,7 @@ class Plant(models.Model):
         return self.name
 
     # def get_absolute_url(self):
-    #     return reverse('ezp10:plant_detail', args=(self.id,))
+    #     return reverse('ezfarmer:plant_detail', args=(self.id,))
 
 
 def _get_upload_path_actuator(instance, filename):
@@ -79,23 +79,7 @@ class Controller(models.Model):
         return self.serial
 
     # def get_absolute_url(self):
-    #     return reverse('ezp10:capture_detail', args=(self.id,))
-
-
-# class Actuator(models.Model):
-#     controller = models.ForeignKey(Controller, on_delete=models.DO_NOTHING)
-#
-#     upload = models.FileField(upload_to=_get_upload_path_actuator)
-#     uploaded_at = models.DateTimeField(auto_now_add=True)
-#
-#     class Meta:
-#         ordering = ('controller', )
-#
-#     def __str__(self):
-#         return self.upload.name
-#
-#     # def get_absolute_url(self):
-#     #     return reverse('ezp10:capture_detail', args=(self.id,))
+    #     return reverse('ezfarmer:capture_detail', args=(self.id,))
 
 
 def _get_upload_path_capture(instance, filename):
@@ -120,7 +104,7 @@ class Capture(models.Model):
         return self.image.name
 
     # def get_absolute_url(self):
-    #     return reverse('ezp10:capture_detail', args=(self.id,))
+    #     return reverse('ezfarmer:capture_detail', args=(self.id,))
 
 
 class Report(models.Model):
@@ -152,5 +136,5 @@ class Report(models.Model):
     #     return self.image.name
     #
     # def get_absolute_url(self):
-    #     return reverse('ezp10:capture_detail', args=(self.id,))
+    #     return reverse('ezfarmer:capture_detail', args=(self.id,))
 
