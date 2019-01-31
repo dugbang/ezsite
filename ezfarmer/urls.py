@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/report/', views.ReportList.as_view(), name='api_report_list'),
     path('api/controller/<pk>/', views.ControllerDetail.as_view(), name='api_controller_detail'),
 
+    # path('', views.PlantLV.as_view(), name='plant'),
     path('plant/', views.PlantLV.as_view(), name='plant'),
     path('capture/', views.CaptureLV.as_view(), name='capture_list'),
 
